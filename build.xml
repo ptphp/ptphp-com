@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="PtPHP" default="help" basedir=".">
+<project name="PtPHP-com" default="help" basedir=".">
+    <property name="PtPHP_DIR" value="D:\\workspace\\PtPHP\\PtPHP"/>
     <target name="help">
         <echo>
             This is Phing menu
@@ -11,6 +12,17 @@
         <ssh username="root"
              host="al.ptphp.com" command="ls" display="true"/>
     </target>
+
+    <target name="build_Ptphp">
+        <echo msg="copy PtPHP Core"></echo>
+        <delete dir="./PtPHP" />
+        <mkdir dir="./PtPHP" />
+        <copy todir="./PtPHP/">
+            <fileset dir="${PtPHP_DIR}/"></fileset>
+        </copy>
+        <echo msg="build_Ptphp ok"></echo>
+    </target>
+
     <target name="test">
         <phpunit printsummary="true" haltonfailure="true" bootstrap="./Tests/bootstrap.php">
             <batchtest>
