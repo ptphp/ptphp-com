@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="PtPHP-com" default="help" basedir=".">
-    <property name="PtPHP_DIR" value="D:\\workspace\\PtPHP\\PtPHP"/>
+    <property name="PtPHP_DIR" value="../PtPHP/PtPHP"/>
     <target name="help">
         <echo>
             This is Phing menu
@@ -23,13 +23,5 @@
         <echo msg="build_Ptphp ok"></echo>
     </target>
 
-    <target name="test">
-        <phpunit printsummary="true" haltonfailure="true" bootstrap="./Tests/bootstrap.php">
-            <batchtest>
-                <fileset dir="./Tests">
-                    <include name="**/*Test.php"/>
-                </fileset>
-            </batchtest>
-        </phpunit>
-    </target>
+
 </project>

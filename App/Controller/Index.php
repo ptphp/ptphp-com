@@ -2,6 +2,6 @@
 namespace Controller\Index;
 class Index{
 	function get(){
-        include View('index');
+        echo "under construction";
 	}
 }
