@@ -6,7 +6,6 @@ $console_array = array();
 include PATH_PTPHP."/Config/default.php";
 include PATH_PTPHP."/Lib/utils.php";
 
-set_test();
 spl_autoload_register('__pt_autoload');
 register_shutdown_function("shut_down_fun");
 if(PHP_SAPI != "cli"){
@@ -21,7 +20,12 @@ class Pt{
     }
     static function set_config($config){
         self::$config = $config;
-        define("DEBUG",$config[$config['mode']]['debug']);
+        if(isset($config['debug'])){
+            define("DEBUG",$config['debug']);
+        }else{
+            define("DEBUG",false);
+        }
+
         if(DEBUG){
             @ini_set('display_errors', 'On');
             error_reporting(E_ALL);
@@ -32,6 +36,7 @@ class Pt{
         }
     }
 }
+class Console extends Lib\PtConsole{}
 
 function View($_path){
     $info = pathinfo($_path);

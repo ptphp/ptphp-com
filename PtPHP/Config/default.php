@@ -1,13 +1,9 @@
 <?php
-$config['mode'] = "product";
-$config['develop']['debug'] = TRUE;
-$config['product']['debug'] = FALSE;
-$config['test']['debug'] = FALSE;
-$config['namespaces']= array(
+/**
 
-);
-
-$config['db']["develop"] = array(
+$config['debug'] = FALSE;
+$config['namespaces']= array();
+$config['db']["mysql"] = array(
     'default'=>array(
         'type'=>'mysql',
         'host'=>'127.0.0.1',
@@ -19,21 +15,31 @@ $config['db']["develop"] = array(
     )
 );
 
-$config['cache']["develop"] = array(
-    'file'=>array(
-        'cache_dir' => PATH_PRO.'/tmp/filecache',
-        'length'    => 3000,
-    ),
-    'redis'=>array(
+
+$config['cache']["redis"] = array(
+    'default'=>array(
         'host' => '127.0.0.1',
         'port' => 6379,
-    ),
-    'mem'=>array(
-        'host' => '127.0.0.1',
-        'port' => 11211,
-    ),
-    'SSDB'=>array(
+    )
+);
+$config['cache']["file"] = array(
+    'default'=>array(
+        'cache_dir' => PATH_PRO.'/tmp/filecache',
+        'length'    => 3000,
+    )
+);
+
+$config['cache']["ssdb"] = array(
+    'default'=>array(
         'host' => '127.0.0.1',
         'port' => 8121,
     )
 );
+$config['cache']["mem"] = array(
+    'default'=>array(
+        'host' => '127.0.0.1',
+        'port' => 11211,
+    )
+);
+ *  */
+
