@@ -16,6 +16,4 @@ def push():
 def deploy():
     remote_dir = "/var/www/ptphp.com"
     with cd(remote_dir):
-        run("sudo -u joseph -H git pull origin master")
-        run("sudo -u joseph -H composer install")
-        run("chmod -R 777 ./Data")
+        run("ls")
