@@ -1,18 +1,17 @@
 <?php
 $config['debug'] = 1;
 $config['namespaces']= array();
-$config['db']["mysql"] = array(
+$config['db'] = array(
     'default'=>array(
         'type'=>'mysql',
         'host'=>'127.0.0.1',
         'port'=>3306,
-        'dbname'=>'root',
+        'dbname'=>'ptphp_db',
         'dbuser'=>'root',
         'dbpass'=>'root',
         'charset'=>'utf8',
     )
 );
-
 
 $config['cache']["redis"] = array(
     'default'=>array(

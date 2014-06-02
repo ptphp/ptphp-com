@@ -33,7 +33,6 @@ PtDb::$config = array(
 );
 $db = PtDb::init("default");
 $res = $db->getOne("select 1");
-console($res);
  *
  *
  */
@@ -51,16 +50,17 @@ class PdoDb {
     
     public static function init($key = 'default')
     {
+        if(empty(self::$config)){
+            self::$config = \Pt::$config['db'];
+        }
         if(!array_key_exists($key, self::$_obj))
         {
-            $class = __class__;
-            self::$_obj[$key] = new $class($key);
+            return self::$_obj[$key] = new PdoDb($key);
         }
         return self::$_obj[$key];
     }
         
     public function config($key){
-        global $config;
         if(!array_key_exists($key,self::$config)){
             die("no config find in db");
         }

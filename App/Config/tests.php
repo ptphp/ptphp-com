@@ -1,7 +1,7 @@
 <?php
 $config['debug'] = FALSE;
 $config['namespaces']= array();
-$config['db']["mysql"] = array(
+$config['db'] = array(
     'default'=>array(
         'type'=>'mysql',
         'host'=>'127.0.0.1',

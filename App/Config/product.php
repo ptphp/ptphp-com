@@ -1,8 +1,8 @@
 <?php
 $config['debug'] = FALSE;
 $config['namespaces']= array();
-$config['db']["mysql"] = array(
-    'default'=>array(
+$config['db'] = array(
+    'default1'=>array(
         'type'=>'mysql',
         'host'=>'127.0.0.1',
         'port'=>3306,
@@ -11,7 +11,7 @@ $config['db']["mysql"] = array(
         'dbpass'=>'root',
         'charset'=>'utf8',
     ),
-	'rds'=>array(
+	'default'=>array(
         'type'=>'mysql',
         'host'=>'rdsnrrmuzbmqvb3.mysql.rds.aliyuncs.com',
         'port'=>3306,
