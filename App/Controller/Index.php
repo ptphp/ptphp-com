@@ -11,8 +11,9 @@ class Index{
 class Test111111{
     function get(){
         $db = PtDb::init("default");
+        var_dump($db);
+        var_dump(\Pt::$config);
         $res = $db->getOne("select * from user");
         var_dump($res);
-
     }
 }
