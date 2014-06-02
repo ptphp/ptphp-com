@@ -14,7 +14,7 @@ if($PT_MODE === FALSE){
 }else{
     $config['mode'] = $PT_MODE;
 }
-define("PT_MODE",$PT_MODE);
+define("PT_MODE",$config['mode']);
 
 if(is_file(PATH_APP."/Config/".PT_MODE.".php")){
     include PATH_APP."/Config/".PT_MODE.".php";
