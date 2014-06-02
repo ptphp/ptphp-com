@@ -10,7 +10,16 @@ $config['db']["mysql"] = array(
         'dbuser'=>'root',
         'dbpass'=>'root',
         'charset'=>'utf8',
-    )
+    ),
+	'rds'=>array(
+        'type'=>'mysql',
+        'host'=>'rdsnrrmuzbmqvb3.mysql.rds.aliyuncs.com',
+        'port'=>3306,
+        'dbname'=>getenv("PTPHP_DB_NAME"),
+        'dbuser'=>getenv("PTPHP_DB_USER"),
+        'dbpass'=>getenv("PTPHP_DB_PASSWD"),
+        'charset'=>'utf8',
+    ),
 );
 
 

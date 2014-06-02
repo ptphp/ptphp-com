@@ -3,7 +3,7 @@ from fabric.api import env, local, cd, run
 from fabric.colors import *
 from fabric.operations import put
 
-env.hosts = "www.ptphp.com"
+env.hosts = "al.ptphp.com"
 env.user = "root"
 env.usesshconfig = True
 env.timeout = 20
@@ -23,6 +23,9 @@ def init_product():
 		run("sudo -u joseph -H git remote add origin git@github.com:ptphp/ptphp-com.git")
 		run("sudo -u joseph -H git pull origin master")
 		
+def reload_nginx():
+	run("service nginx reload")
+	
 def deploy():	
     with cd(remote_dir):
         run("sudo -u joseph -H git pull origin master")
