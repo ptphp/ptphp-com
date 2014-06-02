@@ -10,7 +10,8 @@ class Index{
 
 class Test{
     function get(){
-
+        var_dump(\Pt::$config);
+        exit;
         $db = PtDb::init("default");
         var_dump($db);
         var_dump(\Pt::$config);

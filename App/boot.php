@@ -8,7 +8,6 @@ include PATH_PTPHP."/init.php";
 
 $PT_MODE = get_mode();
 
-
 if($PT_MODE === FALSE){
     $config['mode'] = "product";
 }else{
